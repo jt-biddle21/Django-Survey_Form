@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Results</title>
+    </head>
+    <body>
+        <h5>(You have submitted a form {{request.session.count}} times!)</h5>
+        <h3>Submitted Information:</h3>
+        <p>Name: {{request.session.name}}</p>
+        <p>Location: {{request.session.loc}}</p>
+        <p>Language: {{request.session.lang}}</p>
+        <p>Comment: {{request.session.comm}}</p>
+        <form action="/reset" method="post">
+            {% csrf_token %}
+            <input type="submit" value="GO BACK">
+        </form>
+    </body>
+</html>
